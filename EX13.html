@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Exercicio 13- Forma um Triangulo?</title>
+    <script language="javascript">
+        function EnviarLados() {
+            var lad1, lad2, lad3;
+
+            lad1 = parseFloat(document.formLd.txtld1.value);
+            lad2 = parseFloat(document.formLd.txtld2.value);
+            lad3 = parseFloat(document.formLd.txtld3.value);
+
+            if (
+                (lad2 + lad3) > lad1 &
+                (lad1 + lad3) > lad2 &
+                (lad1 + lad2) > lad3
+            ) {
+                document.getElementById("FormTri").innerHTML = "<h2>Essa medidas podem formar um triângulo</h1>";
+                {
+                    if (lad1 == lad2 & lad2 == lad3)
+                        document.getElementById("TriEql").innerHTML = "<h3>O  Triangulo  Equilatero<br>"
+                            + "<img src='imagens/equilatero.jpg'width='300'height='200'></h3>";
+
+                    else if (lad1 == lad2 | lad2 == lad3 | lad1 == lad3)
+                        document.getElementById("TriIso").innerHTML = "<h3>O Triangulo  Isosceles<br>"
+                            + "<img src='imagens/isosceles.jpg'width='300'height='200'></h3>";
+                    else
+                        document.getElementById("TriEsc").innerHTML = "<h3>O Triangulo  Escaleno<br>"
+                            + "<img src='imagens/escaleno.jpg'width='300'height='200'></h3>";
+                }
+            }
+            else {
+                document.getElementById("NFormTri").innerHTML = "<h2>Essa medidas não formam um triângulo</h1>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h2>Verificar se forma um Triangulo ou nao, e se o triangulo é equilátero,isosceles ou escaleno</h2>
+        <form name="formLd">
+            Informe o 1° Lado :<input type="text" name="txtld1"><br>
+            Informe o 2° Lado :<input type="text" name="txtld2"><br>
+            Informe o 3° Lado :<input type="text" name="txtld3"><br><br>
+            <input type="button" value="Enviar" onclick="EnviarLados();">
+            
+        </form>
+        <hr>
+
+        <p id="FormTri"></p>
+        <p id="NFormTri"></p>
+        <p id="TriEql"></p>
+        <p id="TriIso"></p>
+        <p id="TriEsc"></p>
+    </center>
+</body>
+
+</html>

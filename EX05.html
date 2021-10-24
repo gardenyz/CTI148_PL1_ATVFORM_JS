@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Exercicio 05- Media Aritimedia</title>
+
+    <script language="javascript">
+        function enviarDados() {
+            var num1, num2, num3, num4, mediaAri;
+
+            num1 = parseFloat(document.FormNum.txtNum1.value);
+            num2 = parseFloat(document.FormNum.txtNum2.value);
+            num3 = parseFloat(document.FormNum.txtNum3.value);
+            num4 = parseFloat(document.FormNum.txtNum4.value);
+
+            mediaAri = (num1 + num2 + num3 + num4) / 4;
+            document.getElementById("imprimiMedia").innerHTML = "A média Aritimédia é " + mediaAri + ".";
+        }
+
+    </script>
+
+<body>
+    <center>
+        <h1>Media Aritimedia de 4 Valores</h1>
+        <form name="FormNum">
+            Informe o 1° Numero : <input type="text" name="txtNum1"><br>
+            Informe o 2° Numero : <input type="text" name="txtNum2"><br>
+            Informe o 3° Numero : <input type="text" name="txtNum3"><br>
+            Informe o 4° Numero : <input type="text" name="txtNum4"><br><br>
+            <input type="button" value="Enviar" onclick="enviarDados();"><br>
+        </form>
+
+        <p id="imprimiMedia"></p>
+    </center>
+</body>
+
+</html>

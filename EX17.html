@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Exercicio 17</title>
+    <script language="javascript">
+        function tabuada() {
+            var num, tabuada, count;
+            num = verificarVal();
+            tabuada = '';
+            document.getElementById("titulo").innerHTML = " <h1>TABUADA D0 " + num + " <h1>";
+            for (count = 1; count <= 10; count++) {
+                tabuada = tabuada + num + " x " + count + " = " + num * count + "<br/>";
+            }
+            document.getElementById("resposta").innerHTML = tabuada;
+        }
+        function verificarVal() {
+
+            var num;
+            num = parseInt(document.FormTab.valor1.value);
+            while (num < 0) {
+                document.getElementById("valor2").innerHTML = "Informe novamente um valor positivo:<input type='text' name='valor2'><br>";
+                num = parseInt(document.getElementById("valor2").value);
+            }
+                return num;
+            }
+    </script>
+</head>
+
+<body>
+    <center>
+        <form name="FormTab">
+            <p id="valor1">Informe um valor positivo: <input type="text" name="valor1" onclick="verificarVal();"></p>
+            <br>
+            <p id="valor2"></p><br>
+            <input type="button" onclick="tabuada();" value="Exibir"><br>
+        </form>
+        <p id="titulo"></p>
+        <p id="resposta"></p>
+    </center>
+</body>
+
+</html>
